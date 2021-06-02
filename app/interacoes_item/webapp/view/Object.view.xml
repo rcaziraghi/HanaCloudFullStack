@@ -2,14 +2,16 @@
 	controllerName="interacoesitem.controller.Object"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic">
+	xmlns:semantic="sap.f.semantic"
+    xmlns:l="sap.ui.layout">
 
 	<semantic:SemanticPage
 		id="page"
 		headerPinnable="false"
 		toggleHeaderOnTitleClick="false"
 		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}">
+		busyIndicatorDelay="{objectView>/delay}"
+        >
 
 		<semantic:titleHeading>
 			<Title text="{intCab_ID}" />
@@ -23,13 +25,21 @@
 				}"
 				unit="{intCab_ID}"
 			/>
+            
 		</semantic:headerContent>
 
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
 		</semantic:sendEmailAction>
 
+        <l:Grid containerQuery="true" class="sapUiSmallMarginTop">
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Língua"  press="onPress"
+		        frameType="OneByHalf" subheader="Language">
+		            <TileContent>
+			            <Text text="{langu}" />
+		            </TileContent>
+	        </GenericTile>
+	    </l:Grid>
 
-	</semantic:SemanticPage>
-
+    	</semantic:SemanticPage>
 </mvc:View>

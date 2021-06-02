@@ -46,8 +46,14 @@
 					<Column id="nameColumn">
 						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
 					</Column>
-					<Column id="unitNumberColumn" hAlign="End">
+                    <Column id="IDTextoColumn">
+						<Text text="{i18n>IDTextoColumnTitle}" id="IDTextoColumnTitle"/>
+					</Column>
+					<Column id="unitNumberColumn">
 						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+					</Column>
+                    <Column id="LanguColumn" hAlign="End">
+						<Text text="{i18n>languColumnTitle}" id="languColumnTitle"/>
 					</Column>
 				</columns>
 
@@ -58,12 +64,16 @@
 						<cells>
 							<ObjectIdentifier
 								title="{intCab_ID}"/>
+                            <ObjectIdentifier
+                                title="{IDTexto}" />
 							<ObjectNumber
 								number="{
 									path: 'intCab_ID',
 									formatter: '.formatter.numberUnit'
 								}"
 								unit="{intCab_ID}"/>
+                            <ObjectIdentifier
+                                title="{langu}" />
 						</cells>
 					</ColumnListItem>
 				</items>
